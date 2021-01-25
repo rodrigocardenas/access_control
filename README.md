@@ -1,5 +1,6 @@
 # Access Control REST APi
 This API is created using Laravel 7.29 API Resource. It has Users and Buildings. Protected routes are also added. Protected routes are accessed via Passport access token.
+##### PHP 7.4 is required!
 
 #### Following are the Models
 * User
@@ -15,6 +16,9 @@ Copy contents of .env.example file to .env file. Create a database and connect y
 cd into the project directory via terminal and run the following  command to install composer packages.
 ###### `composer install`
 
+##### Generate Key
+then run the following command to generate fresh key.
+###### `php artisan key:generate`
 
 ##### Passport Install
 run the following command to install passport
@@ -26,8 +30,15 @@ then run the following command to create migrations in the databbase.
 .
 ###### `php artisan passport:install`
 
+### Authenticate
+* Register GET `http://localhost:8000/api/register` 
+    body eg. {"name":"user", "email":"email@email.com", "password":"12345678", "password_confirmation":"12345678"}
+* Login GET `http://localhost:8000/api/login` 
+    body eg. {"email":"email@email.com", "password":"12345678"}
 
 ### API EndPoints
+
+
 ##### User
 * User GET `http://localhost:8000/api/user` 
 * User GET Single `http://localhost:8000/api/user/1`
